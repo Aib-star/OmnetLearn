@@ -1,0 +1,99 @@
+file 4675 1676454652                                            
+version 2
+run UdpSocketDemo-0-20230215-17:50:25-14156
+attr configname UdpSocketDemo
+attr datetime 20230215-17:50:25
+attr experiment UdpSocketDemo
+attr inifile udpsocket.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network UdpSocketDemo
+attr processid 14156
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.*.numApps 1
+param **.client.app[0].typename "\"UDPCSApp\""
+param **.client.app[0].localPort 8088
+param **.client.app[*].destPort 1000
+param **.client.app[*].destAddresses "\"server\""
+param **.client.app[0].sendInterval 1s
+param **.client.app[0].messageLength 1000B
+param **.client.app[0].stopTime 25s
+param **.server.app[*].typename "\"UDPCSApp\""
+param **.server.app[*].localPort 1000
+param **.server.app[*].destPort -1
+param **.server.app[*].destAddresses "\"\""
+param **.server.app[0].sendInterval 1s
+param **.server.app[0].messageLength 1000B
+param **.server.app[0].stopTime 25s
+param *.pathVisualizer.*.displayRoutes true
+
+vector 0 UdpSocketDemo.client.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 1 UdpSocketDemo.server.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 2 UdpSocketDemo.client.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 3 UdpSocketDemo.client.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 4 UdpSocketDemo.client.ppp[0].ppp.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 5 UdpSocketDemo.client.ppp[0].ppp.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 6 UdpSocketDemo.client.ppp[0].ppp.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 7 UdpSocketDemo.client.ppp[0].ppp.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 8 UdpSocketDemo.client.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 9 UdpSocketDemo.server.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 10 UdpSocketDemo.server.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 11 UdpSocketDemo.server.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 12 UdpSocketDemo.server.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+0	3472 169 0 53 0 6.000828 13 0 1 6 6
+1	3641 9 0 0 0 0 1 0 0 0 0
+2	3650 77 4 50 1 6 6 1008 1008 6048 6096384
+3	3727 77 7 52 1 6 6 1028 1028 6168 6340704
+4	3804 77 7 52 1 6 6 1028 1028 6168 6340704
+5	3881 118 7 52 1 6 12 0 1 6 6
+6	3999 77 7 52 1 6 6 1028 1028 6168 6340704
+7	4076 59 7 52 1 6 6 0 0 0 0
+8	4135 77 7 52 1 6 6 1035 1035 6210 6427350
+9	4212 125 9 54 1.0008281 6.0008281 6 1035 1035 6210 6427350
+10	4337 131 9 54 1.0008281 6.0008281 6 1028 1028 6168 6340704
+11	4468 110 11 47 1.0008281 5.0008281 5 1008 1008 5040 5080320
+12	4578 95 11 47 1.0008281 5.0008281 5 1 5 15 55
+

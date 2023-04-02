@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/WithTxc/results/General-*.vec"/>
+    <inputs name="/WithTxc/results/General-*.sca"/>
+  </inputs>
+  <datasets>
+    <datasets name="learn">
+      <items xsi:type="scave:Add" filterPattern="" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="" lineNameFormat="">
+        <properties name="Graph.Title" value="学习数据"/>
+        <properties name="X.Axis.Title" value="时间"/>
+        <properties name="Y.Axis.Title" value="值"/>
+        <properties name="Axes.Grid" value="None"/>
+        <properties name="Legend.Display" value="true"/>
+        <properties name="Symbols.Type" value="Cross"/>
+        <properties name="Line.Type" value="Linear"/>
+      </items>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.1"/>
+  </chartSheets>
+</scave:Analysis>

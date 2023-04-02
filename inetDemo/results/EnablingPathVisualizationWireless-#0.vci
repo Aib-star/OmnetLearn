@@ -1,0 +1,362 @@
+file 32366 1676450989                                           
+version 2
+run EnablingPathVisualizationWireless-0-20230215-16:49:18-19852
+attr configname EnablingPathVisualizationWireless
+attr datetime 20230215-16:49:18
+attr experiment EnablingPathVisualizationWireless
+attr inifile udpsocket.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TransportPathVisualizerSimpleWirelessShowcase
+attr processid 19852
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.source.numApps 1
+param *.source.app[0].typename "\"UdpBasicApp\""
+param *.source.app[0].destAddresses "\"destination\""
+param *.source.app[0].destPort 1000
+param *.source.app[0].messageLength 100B
+param *.source.app[0].startTime 0s
+param *.source.app[0].sendInterval 1s
+param *.destination.numApps 1
+param *.destination.app[0].typename "\"UdpSink\""
+param *.destination.app[0].localPort 1000
+param *.pathVisualizer.*.displayRoutes true
+param *.pathVisualizer.*.fadeOutTime 3s
+param *.*.numApps 1
+param **.client.app[0].typename "\"UDPCSApp\""
+param **.client.app[0].localPort 8088
+param **.client.app[*].destPort 1000
+param **.client.app[*].destAddresses "\"server\""
+param **.client.app[0].sendInterval 1s
+param **.client.app[0].messageLength 1000B
+param **.client.app[0].stopTime 25s
+param **.server.app[*].typename "\"UDPCSApp\""
+param **.server.app[*].localPort 1000
+param **.server.app[*].destPort -1
+param **.server.app[*].destAddresses "\"\""
+param **.server.app[0].sendInterval 1s
+param **.server.app[0].messageLength 1000B
+param **.server.app[0].stopTime 25s
+param *.pathVisualizer.*.displayRoutes true
+
+vector 0 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 4 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 5 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 6 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 7 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 8 TransportPathVisualizerSimpleWirelessShowcase.source.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 9 TransportPathVisualizerSimpleWirelessShowcase.source.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 10 TransportPathVisualizerSimpleWirelessShowcase.source.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 11 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 12 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 13 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 14 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 15 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 16 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 17 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 18 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 19 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 20 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 21 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 22 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 23 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 24 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 25 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetSentToPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , vector(packetBytes)"
+vector 26 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 27 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 28 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 29 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 30 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 31 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, vector(packetBytes)"
+vector 32 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 33 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 34 TransportPathVisualizerSimpleWirelessShowcase.destination.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 35 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 36 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 37 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 38 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 39 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 40 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 41 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 42 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 43 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 44 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 45 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 46 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 47 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 48 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 49 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 50 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 51 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 52 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 53 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 54 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 55 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 56 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 57 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 58 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 59 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 60 TransportPathVisualizerSimpleWirelessShowcase.destination.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 61 TransportPathVisualizerSimpleWirelessShowcase.destination.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 62 TransportPathVisualizerSimpleWirelessShowcase.destination.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 63 TransportPathVisualizerSimpleWirelessShowcase.destination.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 64 TransportPathVisualizerSimpleWirelessShowcase.destination.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number, vector"
+vector 65 TransportPathVisualizerSimpleWirelessShowcase.destination.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+0	17037 352 0 257 0 7.000082 23 0 3 52 134
+1	17389 9 0 0 0 0 1 0 0 0 0
+2	17398 453 0 270 0 7.000126667128 21 0 3 47 121
+3	17851 9 0 0 0 0 1 0 0 0 0
+4	17860 760 0 271 0 7.000127334256 39 0 3 47 101
+5	18620 907 0 270 0 7.000126667128 39 0 3 50 110
+6	19527 10 0 0 0 0 1 31 31 31 961
+7	19537 10 0 0 0 0 1 31 31 31 961
+8	19547 101 1 246 0 7 8 100 100 800 80000
+9	19648 101 4 247 0 7 8 108 108 864 93312
+10	19749 11 7 7 0 0 1 28 28 28 784
+11	19760 134 9 250 0 7 9 36 136 1124 149264
+12	19894 134 9 250 0 7 9 64 164 1376 219264
+13	20028 241 9 252 0 7 18 0 1 9 9
+14	20269 123 9 250 0 7 9 1 24 125 2229
+15	20392 289 9 251 0 7 20 0 1 10 10
+16	20681 141 11 252 0.00019 7 9 64 164 1376 219264
+17	20822 137 11 252 0.00019 7 9 0 0.000474 0.000664 2.60776e-007
+18	20959 339 11 272 0.00019 7.000127334256 18 0 1 9 9
+19	21298 218 11 252 0.00019 7 10 24000000 24000000 240000000 5.76e+015
+20	21516 166 11 252 0.00019 7 10 14 164 1390 219460
+21	21682 339 11 272 0.00019 7.000127334256 18 0 1 9 9
+22	22021 690 12 257 0.00019 7.000082 40 0 2 40 60
+23	22711 215 15 256 0.00024 7.000082 10 14 164 1390 219460
+24	22926 18 15 15 0.00024 0.00024 1 64 64 64 4096
+25	22944 18 15 15 0.00024 0.00024 1 64 64 64 4096
+26	22962 215 15 256 0.00024 7.000082 10 14 164 1390 219460
+27	23177 324 15 272 0.00024 7.000127334256 9 5e-005 0.000127334256 0.001068674048 1.3221210200859e-007
+28	23501 264 18 259 0.000240667128 7.000082667128 10 14 164 1390 219460
+29	23765 264 18 259 0.000240667128 7.000082667128 10 14 164 1390 219460
+30	24029 25 18 18 0.000240667128 0.000240667128 1 64 64 64 4096
+31	24054 25 18 18 0.000240667128 0.000240667128 1 64 64 64 4096
+32	24079 264 18 259 0.000240667128 7.000082667128 10 14 164 1390 219460
+33	24343 239 18 259 0.000240667128 7.000082667128 9 36 136 1124 149264
+34	24582 25 20 20 0.000240667128 0.000240667128 1 28 28 28 784
+35	24607 25 22 22 0.000240667128 0.000240667128 1 36 36 36 1296
+36	24632 25 22 22 0.000240667128 0.000240667128 1 64 64 64 4096
+37	24657 48 22 24 0.000240667128 0.000470667128 2 0 1 1 1
+38	24705 24 22 22 0.000240667128 0.000240667128 1 9 9 9 81
+39	24729 48 22 23 0.000240667128 0.000470667128 2 0 1 1 1
+40	24777 25 24 24 0.000470667128 0.000470667128 1 64 64 64 4096
+41	24802 30 24 24 0.000470667128 0.000470667128 1 0.00023 0.00023 0.00023 5.29e-008
+42	24832 48 24 44 0.000470667128 0.000566001384 2 0 1 1 1
+43	24880 285 24 259 0.000470667128 7.000082667128 9 24000000 24000000 216000000 5.184e+015
+44	25165 231 24 264 0.000470667128 7.000092667128 9 14 64 176 5664
+45	25396 48 24 44 0.000470667128 0.000566001384 2 0 1 1 1
+46	25444 888 25 270 0.000470667128 7.000126667128 36 0 2 36 54
+47	26332 231 28 269 0.000520667128 7.000126667128 9 14 64 176 5664
+48	26563 231 28 269 0.000520667128 7.000126667128 9 14 64 176 5664
+49	26794 231 28 269 0.000520667128 7.000126667128 9 14 64 176 5664
+50	27025 79 28 40 0.000520667128 0.000564667128 3 0 4.4e-005 4.4e-005 1.936e-009
+51	27104 231 31 272 0.000521334256 7.000127334256 9 14 64 176 5664
+52	27335 231 31 272 0.000521334256 7.000127334256 9 14 64 176 5664
+53	27566 231 31 272 0.000521334256 7.000127334256 9 14 64 176 5664
+54	27797 231 31 272 0.000521334256 7.000127334256 9 14 64 176 5664
+55	28028 25 31 31 0.000521334256 0.000521334256 1 36 36 36 1296
+56	28053 197 41 256 0.000565334256 7.000082 9 14 164 1326 215364
+57	28250 239 44 259 0.000566001384 7.000082667128 9 14 164 1326 215364
+58	28489 37 44 44 0.000566001384 0.000566001384 1 9.5334256e-005 9.5334256e-005 9.5334256e-005 9.0886203670735e-009
+59	28526 524 50 268 0.001077334256 7.000126 24 0 4.4e-005 0.000352 1.5488e-008
+60	29050 214 56 262 0.001078001384 7.000082667128 8 108 108 864 93312
+61	29264 198 56 262 0.001078001384 7.000082667128 8 1 8 36 204
+62	29462 214 57 263 0.001078001384 7.000082667128 8 100 100 800 80000
+63	29676 302 57 263 0.001078001384 7.000082667128 8 8.2667128e-005 0.001078001384 0.00165667128 1.2099239622683e-006
+64	29978 198 57 263 0.001078001384 7.000082667128 8 0 7 28 140
+65	30176 977 89 263 0.1 7 70 0 8000 56000 448000000
+vector 66 TransportPathVisualizerSimpleWirelessShowcase.source.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+65	31334 39 274 274 7.010127334256 7.010127334256 1 78994.134070971 78994.134070971 78994.134070971 6240073217.6225
+66	31373 991 274 274 0.1 7.010127334256 71 0 0 0 0
+

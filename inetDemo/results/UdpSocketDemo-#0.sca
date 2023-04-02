@@ -1,0 +1,505 @@
+version 2
+run UdpSocketDemo-0-20230215-17:50:25-14156
+attr configname UdpSocketDemo
+attr datetime 20230215-17:50:25
+attr experiment UdpSocketDemo
+attr inifile udpsocket.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network UdpSocketDemo
+attr processid 14156
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.*.numApps 1
+param **.client.app[0].typename "\"UDPCSApp\""
+param **.client.app[0].localPort 8088
+param **.client.app[*].destPort 1000
+param **.client.app[*].destAddresses "\"server\""
+param **.client.app[0].sendInterval 1s
+param **.client.app[0].messageLength 1000B
+param **.client.app[0].stopTime 25s
+param **.server.app[*].typename "\"UDPCSApp\""
+param **.server.app[*].localPort 1000
+param **.server.app[*].destPort -1
+param **.server.app[*].destAddresses "\"\""
+param **.server.app[0].sendInterval 1s
+param **.server.app[0].messageLength 1000B
+param **.server.app[0].stopTime 25s
+param *.pathVisualizer.*.displayRoutes true
+
+scalar UdpSocketDemo.client.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar UdpSocketDemo.client.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar UdpSocketDemo.client.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar UdpSocketDemo.client.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar UdpSocketDemo.client.ppp[0].ppp.queue packetPopped:count 6
+attr interpolationmode none
+attr title "packet popped, count"
+scalar UdpSocketDemo.client.ppp[0].ppp.queue packetPopped:sum(packetBytes) 6168
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic UdpSocketDemo.client.ppp[0].ppp.queue queueingTime:histogram
+field count 6
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	6
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar UdpSocketDemo.client.ppp[0].ppp.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar UdpSocketDemo.client.ppp[0].ppp.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar UdpSocketDemo.client.ppp[0].ppp.queue packetPushed:count 6
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar UdpSocketDemo.client.ppp[0].ppp.queue packetPushed:sum(packetBytes) 6168
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar UdpSocketDemo.client.ppp[0].ppp.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar UdpSocketDemo.client.ppp[0].ppp.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar UdpSocketDemo.client.ppp[0].ppp.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar UdpSocketDemo.client.ppp[0].ppp.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar UdpSocketDemo.client.ppp[0].ppp txPk:count 6
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar UdpSocketDemo.client.ppp[0].ppp txPk:sum(packetBytes) 6210
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar UdpSocketDemo.client.ppp[0].ppp rcvdPkFromHl:count 6
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar UdpSocketDemo.client.ppp[0].ppp rcvdPkFromHl:sum(packetBytes) 6168
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar UdpSocketDemo.client.ppp[0].ppp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar UdpSocketDemo.client.ppp[0].ppp passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar UdpSocketDemo.client.ppp[0].ppp packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar UdpSocketDemo.client.ppp[0].ppp packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar UdpSocketDemo.client.ppp[0].ppp packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar UdpSocketDemo.client.ppp[0].ppp packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar UdpSocketDemo.client.ppp[0].ppp rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar UdpSocketDemo.client.ppp[0].ppp rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar UdpSocketDemo.client.ppp[0].ppp transmissionState:timeavg 0.00082788573797006
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, timeavg"
+scalar UdpSocketDemo.client.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar UdpSocketDemo.client.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar UdpSocketDemo.client.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar UdpSocketDemo.client.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar UdpSocketDemo.client.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar UdpSocketDemo.client.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar UdpSocketDemo.client.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar UdpSocketDemo.client.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar UdpSocketDemo.client.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar UdpSocketDemo.client.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar UdpSocketDemo.client.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar UdpSocketDemo.client.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar UdpSocketDemo.client.ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar UdpSocketDemo.client.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar UdpSocketDemo.client.ipv4.arp arpRequestSent:count 0
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar UdpSocketDemo.client.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar UdpSocketDemo.client.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar UdpSocketDemo.client.ipv4.arp arpResolutionCompleted:count 0
+attr title "ARP completed resolutions, count"
+scalar UdpSocketDemo.client.ipv4.arp arpResolutionInitiated:count 0
+attr title "ARP initiated resolutions, count"
+scalar UdpSocketDemo.client.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar UdpSocketDemo.client.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar UdpSocketDemo.client.udp packetSent:count 6
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar UdpSocketDemo.client.udp packetSent:sum(packetBytes) 6048
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar UdpSocketDemo.client.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar UdpSocketDemo.client.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar UdpSocketDemo.client.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar UdpSocketDemo.server.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar UdpSocketDemo.server.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar UdpSocketDemo.server.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar UdpSocketDemo.server.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar UdpSocketDemo.server.ppp[0].ppp.queue packetPopped:count 0
+attr interpolationmode none
+attr title "packet popped, count"
+scalar UdpSocketDemo.server.ppp[0].ppp.queue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic UdpSocketDemo.server.ppp[0].ppp.queue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar UdpSocketDemo.server.ppp[0].ppp.queue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar UdpSocketDemo.server.ppp[0].ppp.queue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar UdpSocketDemo.server.ppp[0].ppp.queue packetPushed:count 0
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar UdpSocketDemo.server.ppp[0].ppp.queue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar UdpSocketDemo.server.ppp[0].ppp.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar UdpSocketDemo.server.ppp[0].ppp.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar UdpSocketDemo.server.ppp[0].ppp.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar UdpSocketDemo.server.ppp[0].ppp.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar UdpSocketDemo.server.ppp[0].ppp txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar UdpSocketDemo.server.ppp[0].ppp txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar UdpSocketDemo.server.ppp[0].ppp rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar UdpSocketDemo.server.ppp[0].ppp rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar UdpSocketDemo.server.ppp[0].ppp passedUpPk:count 6
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar UdpSocketDemo.server.ppp[0].ppp passedUpPk:sum(packetBytes) 6168
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar UdpSocketDemo.server.ppp[0].ppp packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar UdpSocketDemo.server.ppp[0].ppp packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar UdpSocketDemo.server.ppp[0].ppp packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar UdpSocketDemo.server.ppp[0].ppp packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar UdpSocketDemo.server.ppp[0].ppp rxPkOk:count 6
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar UdpSocketDemo.server.ppp[0].ppp rxPkOk:sum(packetBytes) 6210
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar UdpSocketDemo.server.ppp[0].ppp transmissionState:timeavg 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, timeavg"
+scalar UdpSocketDemo.server.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar UdpSocketDemo.server.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar UdpSocketDemo.server.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar UdpSocketDemo.server.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar UdpSocketDemo.server.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar UdpSocketDemo.server.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar UdpSocketDemo.server.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar UdpSocketDemo.server.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar UdpSocketDemo.server.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar UdpSocketDemo.server.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar UdpSocketDemo.server.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar UdpSocketDemo.server.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar UdpSocketDemo.server.ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar UdpSocketDemo.server.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar UdpSocketDemo.server.ipv4.arp arpRequestSent:count 0
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar UdpSocketDemo.server.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar UdpSocketDemo.server.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar UdpSocketDemo.server.ipv4.arp arpResolutionCompleted:count 0
+attr title "ARP completed resolutions, count"
+scalar UdpSocketDemo.server.ipv4.arp arpResolutionInitiated:count 0
+attr title "ARP initiated resolutions, count"
+scalar UdpSocketDemo.server.udp packetReceived:count 5
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar UdpSocketDemo.server.udp packetReceived:sum(packetBytes) 5040
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar UdpSocketDemo.server.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar UdpSocketDemo.server.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar UdpSocketDemo.server.udp passedUpPk:count 5
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar UdpSocketDemo.server.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar UdpSocketDemo.server.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+

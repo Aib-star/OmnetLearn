@@ -1,0 +1,3062 @@
+version 2
+run General-0-20230215-17:23:28-7320
+attr configname General
+attr datetime 20230215-17:23:28
+attr experiment General
+attr inifile wireless.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network WirelessDemo
+attr processid 7320
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.client.numApps 1
+param **.client.app[*].typename "\"TcpSessionApp\""
+param **.client.app[*].localAddress "\"\""
+param **.client.app[*].localPort -1
+param **.client.app[*].connectAddress "\"server\""
+param **.client.app[*].connectPort 1000
+param **.client.app[*].tOpen 1.0s
+param **.client.app[*].tSend 1.1s
+param **.client.app[*].sendBytes 1MiB
+param **.client.app[*].sendScript "\"\""
+param **.client.app[*].tClose 0s
+param **.server.numApps 1
+param **.server.app[*].typename "\"TcpEchoApp\""
+param **.server.app[0].localAddress "\"\""
+param **.server.app[0].localPort 1000
+param **.server.app[0].echoFactor 2.0
+param **.server.app[0].echoDelay 0s
+param **.eth[*].mac.duplexMode true
+param **.ppp[*].ppp.queue.typename "\"DropTailQueue\""
+param **.ppp[*].ppp.queue.packetCapacity 10
+param **.eth[*].mac.queue.typename "\"EtherQosQueue\""
+param **.eth[*].mac.queue.dataQueue.typename "\"DropTailQueue\""
+param **.eth[*].mac.queue.dataQueue.packetCapacity 10
+param **.switch*.relayUnit.typename "\"MacRelayUnit\""
+param **.relayUnit.addressTableSize 100
+param **.relayUnit.agingTime 120s
+param **.relayUnit.bufferSize 1MiB
+param **.relayUnit.highWatermark 512KiB
+param **.relayUnit.pauseUnits 300
+param **.relayUnit.addressTableFile "\"\""
+param **.relayUnit.numCPUs 2
+param **.relayUnit.processingTime 2us
+param **.mac[*].duplexMode true
+
+scalar WirelessDemo.radioMedium.propagation "Arrival computation count" 10
+scalar WirelessDemo.radioMedium "transmission count" 10
+scalar WirelessDemo.radioMedium "signal send count" 10
+scalar WirelessDemo.radioMedium "reception computation count" 10
+scalar WirelessDemo.radioMedium "interference computation count" 42
+scalar WirelessDemo.radioMedium "reception decision computation count" 10
+scalar WirelessDemo.radioMedium "listening decision computation count" 22
+scalar WirelessDemo.radioMedium "reception cache hit" 85.714285714286
+attr unit %
+scalar WirelessDemo.radioMedium "interference cache hit" 66.666666666667
+attr unit %
+scalar WirelessDemo.radioMedium "noise cache hit" 0
+attr unit %
+scalar WirelessDemo.radioMedium "snir cache hit" 50
+attr unit %
+scalar WirelessDemo.radioMedium "reception decision cache hit" 50
+attr unit %
+scalar WirelessDemo.radioMedium "reception result cache hit" 0
+attr unit %
+scalar WirelessDemo.client.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar WirelessDemo.client.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar WirelessDemo.client.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessDemo.client.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].agent dropConfirm:count 0
+attr title "dropped confirms, count"
+scalar WirelessDemo.client.wlan[0].agent acceptConfirm:count 1
+attr title "accepted confirms, count"
+scalar WirelessDemo.client.wlan[0].agent sentRequest:count 2
+attr title "sent requests, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:count 2
+attr interpolationmode none
+attr title "packet popped, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:sum(packetBytes) 66
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:count 2
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:sum(packetBytes) 66
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.pendingQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+statistic WirelessDemo.client.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 2
+field mean 6.2510527e-005
+field stddev 3.4663119704312e-005
+field min 3.8e-005
+field max 8.7021054e-005
+field sum 0.000125021054
+field sqrsum 9.0166638392709e-009
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, histogram"
+bin	-inf	0
+bin	2.5e-005	0
+bin	2.6e-005	0
+bin	2.7e-005	0
+bin	2.8e-005	0
+bin	2.9e-005	0
+bin	3e-005	0
+bin	3.1e-005	0
+bin	3.2e-005	0
+bin	3.3e-005	0
+bin	3.4e-005	0
+bin	3.5e-005	0
+bin	3.6e-005	0
+bin	3.7e-005	1
+bin	3.8e-005	0
+bin	3.9e-005	0
+bin	4e-005	0
+bin	4.1e-005	0
+bin	4.2e-005	0
+bin	4.3e-005	0
+bin	4.4e-005	0
+bin	4.5e-005	0
+bin	4.6e-005	0
+bin	4.7e-005	0
+bin	4.8e-005	0
+bin	4.9e-005	0
+bin	5e-005	0
+bin	5.1e-005	0
+bin	5.2e-005	0
+bin	5.3e-005	0
+bin	5.4e-005	0
+bin	5.5e-005	0
+bin	5.6e-005	0
+bin	5.7e-005	0
+bin	5.8e-005	0
+bin	5.9e-005	0
+bin	6e-005	0
+bin	6.1e-005	0
+bin	6.2e-005	0
+bin	6.3e-005	0
+bin	6.4e-005	0
+bin	6.5e-005	0
+bin	6.6e-005	0
+bin	6.7e-005	0
+bin	6.8e-005	0
+bin	6.9e-005	0
+bin	7e-005	0
+bin	7.1e-005	0
+bin	7.2e-005	0
+bin	7.3e-005	0
+bin	7.4e-005	0
+bin	7.5e-005	0
+bin	7.6e-005	0
+bin	7.7e-005	0
+bin	7.8e-005	0
+bin	7.9e-005	0
+bin	8e-005	0
+bin	8.1e-005	0
+bin	8.2e-005	0
+bin	8.3e-005	0
+bin	8.4e-005	0
+bin	8.5e-005	0
+bin	8.6e-005	0
+bin	8.7e-005	1
+bin	8.8e-005	0
+bin	8.9e-005	0
+bin	9e-005	0
+bin	9.1e-005	0
+bin	9.2e-005	0
+bin	9.3e-005	0
+bin	9.4e-005	0
+bin	9.5e-005	0
+bin	9.6e-005	0
+bin	9.7e-005	0
+bin	9.8e-005	0
+bin	9.9e-005	0
+bin	0.0001	0
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, max"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.00041588219416435
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.contention stateChanged:count 46
+attr interpolationmode none
+attr title "contention state changed, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess.contention channelAccessGranted:count 2
+attr title "channel access granted, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.channelAccess channelOwnershipChanged:count 4
+attr interpolationmode sample-hold
+attr title "channel ownership, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr title "packets aggregated, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr title "packets fragmented, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr title "packets deaggregated, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.recipientMacDataService packetDefragmented:count 6
+attr title "packets defragmented, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr title "retry limit reached, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeer:count 7
+attr interpolationmode none
+attr title "packets received, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeer:sum(packetBytes) 302
+attr interpolationmode none
+attr title "packets received, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeerUnicast:count 2
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 62
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeerMulticast:count 5
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 240
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:count 5
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 240
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:count 7
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 302
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeer:count 3
+attr interpolationmode none
+attr title "packets sent, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeer:sum(packetBytes) 80
+attr interpolationmode none
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeerUnicast:count 2
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 48
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeerMulticast:count 1
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeerBroadcast:count 1
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeerWithoutRetry:count 3
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 80
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetDrop:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+scalar WirelessDemo.client.wlan[0].mac.dcf frameSequenceFinished:count 2
+attr title "finished frame sequences, count"
+statistic WirelessDemo.client.wlan[0].mac.dcf frameSequenceDuration:histogram
+field count 2
+field mean 6.2510527e-005
+field stddev 3.4663119704312e-005
+field min 3.8e-005
+field max 8.7021054e-005
+field sum 0.000125021054
+field sqrsum 9.0166638392709e-009
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations, histogram"
+bin	-inf	0
+bin	2.5e-005	0
+bin	2.6e-005	0
+bin	2.7e-005	0
+bin	2.8e-005	0
+bin	2.9e-005	0
+bin	3e-005	0
+bin	3.1e-005	0
+bin	3.2e-005	0
+bin	3.3e-005	0
+bin	3.4e-005	0
+bin	3.5e-005	0
+bin	3.6e-005	0
+bin	3.7e-005	1
+bin	3.8e-005	0
+bin	3.9e-005	0
+bin	4e-005	0
+bin	4.1e-005	0
+bin	4.2e-005	0
+bin	4.3e-005	0
+bin	4.4e-005	0
+bin	4.5e-005	0
+bin	4.6e-005	0
+bin	4.7e-005	0
+bin	4.8e-005	0
+bin	4.9e-005	0
+bin	5e-005	0
+bin	5.1e-005	0
+bin	5.2e-005	0
+bin	5.3e-005	0
+bin	5.4e-005	0
+bin	5.5e-005	0
+bin	5.6e-005	0
+bin	5.7e-005	0
+bin	5.8e-005	0
+bin	5.9e-005	0
+bin	6e-005	0
+bin	6.1e-005	0
+bin	6.2e-005	0
+bin	6.3e-005	0
+bin	6.4e-005	0
+bin	6.5e-005	0
+bin	6.6e-005	0
+bin	6.7e-005	0
+bin	6.8e-005	0
+bin	6.9e-005	0
+bin	7e-005	0
+bin	7.1e-005	0
+bin	7.2e-005	0
+bin	7.3e-005	0
+bin	7.4e-005	0
+bin	7.5e-005	0
+bin	7.6e-005	0
+bin	7.7e-005	0
+bin	7.8e-005	0
+bin	7.9e-005	0
+bin	8e-005	0
+bin	8.1e-005	0
+bin	8.2e-005	0
+bin	8.3e-005	0
+bin	8.4e-005	0
+bin	8.5e-005	0
+bin	8.6e-005	0
+bin	8.7e-005	1
+bin	8.8e-005	0
+bin	8.9e-005	0
+bin	9e-005	0
+bin	9.1e-005	0
+bin	9.2e-005	0
+bin	9.3e-005	0
+bin	9.4e-005	0
+bin	9.5e-005	0
+bin	9.6e-005	0
+bin	9.7e-005	0
+bin	9.8e-005	0
+bin	9.9e-005	0
+bin	0.0001	0
+statistic WirelessDemo.client.wlan[0].mac.dcf frameSequenceNumPackets:histogram
+field count 2
+field mean 1.5
+field stddev 0.70710678118655
+field min 1
+field max 2
+field sum 3
+field sqrsum 5
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	1
+bin	2	1
+bin	3	0
+scalar WirelessDemo.client.wlan[0].mac packetReceivedFromLower:count 7
+attr interpolationmode none
+attr title "packets received from lower layer, count"
+scalar WirelessDemo.client.wlan[0].mac packetReceivedFromLower:sum(packetBytes) 302
+attr interpolationmode none
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac packetSentToLower:count 3
+attr interpolationmode none
+attr title "packets sent to lower layer, count"
+scalar WirelessDemo.client.wlan[0].mac packetSentToLower:sum(packetBytes) 80
+attr interpolationmode none
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr title "packets received from upper layer, count"
+scalar WirelessDemo.client.wlan[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac packetSentToUpper:count 0
+attr interpolationmode none
+attr title "packets sent to upper layer, count"
+scalar WirelessDemo.client.wlan[0].mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac packetDrop:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar WirelessDemo.client.wlan[0].mac packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar WirelessDemo.client.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar WirelessDemo.client.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.client.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar WirelessDemo.client.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar WirelessDemo.client.wlan[0].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac packetDropOther:count 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar WirelessDemo.client.wlan[0].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar WirelessDemo.client.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+statistic WirelessDemo.client.wlan[0].radio minSnir:histogram
+field count 7
+field mean 8352.5188990559
+field stddev 0
+field min 8352.5188990559
+field max 8352.5188990559
+field sum 58467.632293392
+field sqrsum 488352003.71361
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	8352	0
+bin	8352.02	0
+bin	8352.04	0
+bin	8352.06	0
+bin	8352.08	0
+bin	8352.1	0
+bin	8352.12	0
+bin	8352.14	0
+bin	8352.16	0
+bin	8352.18	0
+bin	8352.2	0
+bin	8352.22	0
+bin	8352.24	0
+bin	8352.26	0
+bin	8352.28	0
+bin	8352.3	0
+bin	8352.32	0
+bin	8352.34	0
+bin	8352.36	0
+bin	8352.38	0
+bin	8352.4	0
+bin	8352.42	0
+bin	8352.44	0
+bin	8352.46	0
+bin	8352.48	0
+bin	8352.5	7
+bin	8352.52	0
+bin	8352.54	0
+bin	8352.56	0
+bin	8352.58	0
+bin	8352.6	0
+bin	8352.62	0
+bin	8352.64	0
+bin	8352.66	0
+bin	8352.68	0
+bin	8352.7	0
+bin	8352.72	0
+bin	8352.74	0
+bin	8352.76	0
+bin	8352.78	0
+bin	8352.8	0
+bin	8352.82	0
+bin	8352.84	0
+bin	8352.86	0
+bin	8352.88	0
+bin	8352.9	0
+bin	8352.92	0
+bin	8352.94	0
+bin	8352.96	0
+bin	8352.98	0
+bin	8353	0
+bin	8353.02	0
+statistic WirelessDemo.client.wlan[0].radio packetErrorRate:histogram
+field count 7
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	7
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic WirelessDemo.client.wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic WirelessDemo.client.wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.client.wlan[0].radio transmissionState:count 12
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar WirelessDemo.client.wlan[0].radio receptionState:count 21
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar WirelessDemo.client.wlan[0].radio radioMode:count 9
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic WirelessDemo.client.wlan[0].radio radioChannel:histogram
+field count 3
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	3
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar WirelessDemo.client.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar WirelessDemo.client.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar WirelessDemo.client.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar WirelessDemo.client.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar WirelessDemo.client.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar WirelessDemo.client.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar WirelessDemo.client.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar WirelessDemo.client.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar WirelessDemo.client.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar WirelessDemo.client.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar WirelessDemo.client.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar WirelessDemo.client.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar WirelessDemo.client.ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar WirelessDemo.client.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar WirelessDemo.client.ipv4.arp arpRequestSent:count 0
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar WirelessDemo.client.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar WirelessDemo.client.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar WirelessDemo.client.ipv4.arp arpResolutionCompleted:count 0
+attr title "ARP completed resolutions, count"
+scalar WirelessDemo.client.ipv4.arp arpResolutionInitiated:count 0
+attr title "ARP initiated resolutions, count"
+scalar WirelessDemo.client.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar WirelessDemo.client.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar WirelessDemo.client.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar WirelessDemo.client.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessDemo.client.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar WirelessDemo.client.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar WirelessDemo.client.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar WirelessDemo.client.app[0] bytesRcvd 0
+scalar WirelessDemo.client.app[0] bytesSent 0
+scalar WirelessDemo.client.app[0] packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar WirelessDemo.client.app[0] packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic WirelessDemo.client.app[0] endToEndDelay:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic WirelessDemo.client.app[0] endToEndDelay:weightedHistogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field weights 0
+field weightedSum 0
+field sqrSumWeights 0
+field weightedSqrSum 0
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, weightedHistogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.client.app[0] packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar WirelessDemo.client.app[0] packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessDemo.server.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar WirelessDemo.server.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar WirelessDemo.server.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessDemo.server.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue.classifier packetPushed:count 0
+attr interpolationmode none
+attr title "packets pushed, count"
+scalar WirelessDemo.server.eth[0].mac.queue.classifier packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets pushed, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue.classifier packetDropped:count 0
+attr interpolationmode none
+attr title "packets dropped, count"
+scalar WirelessDemo.server.eth[0].mac.queue.classifier packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets dropped, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue.pauseQueue packetPopped:count 0
+attr interpolationmode none
+attr title "packet popped, count"
+scalar WirelessDemo.server.eth[0].mac.queue.pauseQueue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic WirelessDemo.server.eth[0].mac.queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.server.eth[0].mac.queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.server.eth[0].mac.queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.server.eth[0].mac.queue.pauseQueue packetPushed:count 0
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar WirelessDemo.server.eth[0].mac.queue.pauseQueue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue.pauseQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.server.eth[0].mac.queue.pauseQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue.pauseQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar WirelessDemo.server.eth[0].mac.queue.pauseQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue.dataQueue packetPopped:count 0
+attr interpolationmode none
+attr title "packet popped, count"
+scalar WirelessDemo.server.eth[0].mac.queue.dataQueue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic WirelessDemo.server.eth[0].mac.queue.dataQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.server.eth[0].mac.queue.dataQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.server.eth[0].mac.queue.dataQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.server.eth[0].mac.queue.dataQueue packetPushed:count 0
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar WirelessDemo.server.eth[0].mac.queue.dataQueue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue.dataQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.server.eth[0].mac.queue.dataQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue.dataQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar WirelessDemo.server.eth[0].mac.queue.dataQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue.scheduler packetPopped:count 0
+attr interpolationmode none
+attr title "packets popped, count"
+scalar WirelessDemo.server.eth[0].mac.queue.scheduler packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets popped, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue packetPopped:count 0
+attr interpolationmode none
+attr source localSignal(packetPopped)
+attr title "packets popped, count"
+scalar WirelessDemo.server.eth[0].mac.queue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetPopped)
+attr title "packets popped, sum(packetBytes)"
+statistic WirelessDemo.server.eth[0].mac.queue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.server.eth[0].mac.queue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(localSignal(packetPushed)) - count(localSignal(packetPopped)) - count(localSignal(packetRemoved)) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.server.eth[0].mac.queue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(localSignal(packetPushed)) - count(localSignal(packetPopped)) - count(localSignal(packetRemoved)) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.server.eth[0].mac.queue packetPushed:count 0
+attr interpolationmode none
+attr source localSignal(packetPushed)
+attr title "packets pushed, count"
+scalar WirelessDemo.server.eth[0].mac.queue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetPushed)
+attr title "packets pushed, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packets dropped: queue overflow, count"
+scalar WirelessDemo.server.eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packets dropped: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr source localSignal(packetRemoved)
+attr title "packets removed, count"
+scalar WirelessDemo.server.eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetRemoved)
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac "simulated time" 0.564081463742
+scalar WirelessDemo.server.eth[0].mac full-duplex 1
+scalar WirelessDemo.server.eth[0].mac "frames/sec sent" 0
+scalar WirelessDemo.server.eth[0].mac "frames/sec rcvd" 0
+scalar WirelessDemo.server.eth[0].mac "bits/sec sent" 0
+scalar WirelessDemo.server.eth[0].mac "bits/sec rcvd" 0
+scalar WirelessDemo.server.eth[0].mac "rx channel idle (%)" 100
+scalar WirelessDemo.server.eth[0].mac "rx channel utilization (%)" 0
+scalar WirelessDemo.server.eth[0].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar WirelessDemo.server.eth[0].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar WirelessDemo.server.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessDemo.server.eth[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar WirelessDemo.server.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar WirelessDemo.server.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar WirelessDemo.server.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar WirelessDemo.server.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar WirelessDemo.server.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar WirelessDemo.server.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar WirelessDemo.server.eth[0].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar WirelessDemo.server.eth[0].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar WirelessDemo.server.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar WirelessDemo.server.eth[0].encap decapPk:count 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar WirelessDemo.server.eth[0].encap decapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar WirelessDemo.server.eth[0].encap encapPk:count 0
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar WirelessDemo.server.eth[0].encap encapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar WirelessDemo.server.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar WirelessDemo.server.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar WirelessDemo.server.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar WirelessDemo.server.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar WirelessDemo.server.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar WirelessDemo.server.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar WirelessDemo.server.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar WirelessDemo.server.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar WirelessDemo.server.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar WirelessDemo.server.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar WirelessDemo.server.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar WirelessDemo.server.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar WirelessDemo.server.ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar WirelessDemo.server.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar WirelessDemo.server.ipv4.arp arpRequestSent:count 0
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar WirelessDemo.server.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar WirelessDemo.server.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar WirelessDemo.server.ipv4.arp arpResolutionCompleted:count 0
+attr title "ARP completed resolutions, count"
+scalar WirelessDemo.server.ipv4.arp arpResolutionInitiated:count 0
+attr title "ARP initiated resolutions, count"
+scalar WirelessDemo.server.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar WirelessDemo.server.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar WirelessDemo.server.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar WirelessDemo.server.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessDemo.server.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar WirelessDemo.server.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar WirelessDemo.server.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar WirelessDemo.server.app[0] bytesRcvd 0
+scalar WirelessDemo.server.app[0] bytesSent 0
+scalar WirelessDemo.server.app[0] packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar WirelessDemo.server.app[0] packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic WirelessDemo.server.app[0] endToEndDelay:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic WirelessDemo.server.app[0] endToEndDelay:weightedHistogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field weights 0
+field weightedSum 0
+field sqrSumWeights 0
+field weightedSqrSum 0
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, weightedHistogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.server.app[0] packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar WirelessDemo.server.app[0] packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessDemo.router.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar WirelessDemo.router.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar WirelessDemo.router.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessDemo.router.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue.classifier packetPushed:count 0
+attr interpolationmode none
+attr title "packets pushed, count"
+scalar WirelessDemo.router.eth[0].mac.queue.classifier packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets pushed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue.classifier packetDropped:count 0
+attr interpolationmode none
+attr title "packets dropped, count"
+scalar WirelessDemo.router.eth[0].mac.queue.classifier packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets dropped, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue.pauseQueue packetPopped:count 0
+attr interpolationmode none
+attr title "packet popped, count"
+scalar WirelessDemo.router.eth[0].mac.queue.pauseQueue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic WirelessDemo.router.eth[0].mac.queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.router.eth[0].mac.queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.router.eth[0].mac.queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.router.eth[0].mac.queue.pauseQueue packetPushed:count 0
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar WirelessDemo.router.eth[0].mac.queue.pauseQueue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue.pauseQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.router.eth[0].mac.queue.pauseQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue.pauseQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar WirelessDemo.router.eth[0].mac.queue.pauseQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue.dataQueue packetPopped:count 0
+attr interpolationmode none
+attr title "packet popped, count"
+scalar WirelessDemo.router.eth[0].mac.queue.dataQueue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic WirelessDemo.router.eth[0].mac.queue.dataQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.router.eth[0].mac.queue.dataQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.router.eth[0].mac.queue.dataQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.router.eth[0].mac.queue.dataQueue packetPushed:count 0
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar WirelessDemo.router.eth[0].mac.queue.dataQueue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue.dataQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.router.eth[0].mac.queue.dataQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue.dataQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar WirelessDemo.router.eth[0].mac.queue.dataQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue.scheduler packetPopped:count 0
+attr interpolationmode none
+attr title "packets popped, count"
+scalar WirelessDemo.router.eth[0].mac.queue.scheduler packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets popped, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue packetPopped:count 0
+attr interpolationmode none
+attr source localSignal(packetPopped)
+attr title "packets popped, count"
+scalar WirelessDemo.router.eth[0].mac.queue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetPopped)
+attr title "packets popped, sum(packetBytes)"
+statistic WirelessDemo.router.eth[0].mac.queue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.router.eth[0].mac.queue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(localSignal(packetPushed)) - count(localSignal(packetPopped)) - count(localSignal(packetRemoved)) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.router.eth[0].mac.queue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(localSignal(packetPushed)) - count(localSignal(packetPopped)) - count(localSignal(packetRemoved)) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.router.eth[0].mac.queue packetPushed:count 0
+attr interpolationmode none
+attr source localSignal(packetPushed)
+attr title "packets pushed, count"
+scalar WirelessDemo.router.eth[0].mac.queue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetPushed)
+attr title "packets pushed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packets dropped: queue overflow, count"
+scalar WirelessDemo.router.eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packets dropped: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr source localSignal(packetRemoved)
+attr title "packets removed, count"
+scalar WirelessDemo.router.eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetRemoved)
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac "simulated time" 0.564081463742
+scalar WirelessDemo.router.eth[0].mac full-duplex 1
+scalar WirelessDemo.router.eth[0].mac "frames/sec sent" 0
+scalar WirelessDemo.router.eth[0].mac "frames/sec rcvd" 0
+scalar WirelessDemo.router.eth[0].mac "bits/sec sent" 0
+scalar WirelessDemo.router.eth[0].mac "bits/sec rcvd" 0
+scalar WirelessDemo.router.eth[0].mac "rx channel idle (%)" 100
+scalar WirelessDemo.router.eth[0].mac "rx channel utilization (%)" 0
+scalar WirelessDemo.router.eth[0].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar WirelessDemo.router.eth[0].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar WirelessDemo.router.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessDemo.router.eth[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar WirelessDemo.router.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar WirelessDemo.router.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar WirelessDemo.router.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar WirelessDemo.router.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar WirelessDemo.router.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar WirelessDemo.router.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar WirelessDemo.router.eth[0].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar WirelessDemo.router.eth[0].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar WirelessDemo.router.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar WirelessDemo.router.eth[0].encap decapPk:count 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar WirelessDemo.router.eth[0].encap decapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar WirelessDemo.router.eth[0].encap encapPk:count 0
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar WirelessDemo.router.eth[0].encap encapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue.classifier packetPushed:count 0
+attr interpolationmode none
+attr title "packets pushed, count"
+scalar WirelessDemo.router.eth[1].mac.queue.classifier packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets pushed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue.classifier packetDropped:count 0
+attr interpolationmode none
+attr title "packets dropped, count"
+scalar WirelessDemo.router.eth[1].mac.queue.classifier packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets dropped, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue.pauseQueue packetPopped:count 0
+attr interpolationmode none
+attr title "packet popped, count"
+scalar WirelessDemo.router.eth[1].mac.queue.pauseQueue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic WirelessDemo.router.eth[1].mac.queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.router.eth[1].mac.queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.router.eth[1].mac.queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.router.eth[1].mac.queue.pauseQueue packetPushed:count 0
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar WirelessDemo.router.eth[1].mac.queue.pauseQueue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue.pauseQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.router.eth[1].mac.queue.pauseQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue.pauseQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar WirelessDemo.router.eth[1].mac.queue.pauseQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue.dataQueue packetPopped:count 0
+attr interpolationmode none
+attr title "packet popped, count"
+scalar WirelessDemo.router.eth[1].mac.queue.dataQueue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic WirelessDemo.router.eth[1].mac.queue.dataQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.router.eth[1].mac.queue.dataQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.router.eth[1].mac.queue.dataQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.router.eth[1].mac.queue.dataQueue packetPushed:count 0
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar WirelessDemo.router.eth[1].mac.queue.dataQueue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue.dataQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.router.eth[1].mac.queue.dataQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue.dataQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar WirelessDemo.router.eth[1].mac.queue.dataQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue.scheduler packetPopped:count 0
+attr interpolationmode none
+attr title "packets popped, count"
+scalar WirelessDemo.router.eth[1].mac.queue.scheduler packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets popped, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue packetPopped:count 0
+attr interpolationmode none
+attr source localSignal(packetPopped)
+attr title "packets popped, count"
+scalar WirelessDemo.router.eth[1].mac.queue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetPopped)
+attr title "packets popped, sum(packetBytes)"
+statistic WirelessDemo.router.eth[1].mac.queue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.router.eth[1].mac.queue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(localSignal(packetPushed)) - count(localSignal(packetPopped)) - count(localSignal(packetRemoved)) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.router.eth[1].mac.queue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(localSignal(packetPushed)) - count(localSignal(packetPopped)) - count(localSignal(packetRemoved)) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.router.eth[1].mac.queue packetPushed:count 0
+attr interpolationmode none
+attr source localSignal(packetPushed)
+attr title "packets pushed, count"
+scalar WirelessDemo.router.eth[1].mac.queue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetPushed)
+attr title "packets pushed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packets dropped: queue overflow, count"
+scalar WirelessDemo.router.eth[1].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packets dropped: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr source localSignal(packetRemoved)
+attr title "packets removed, count"
+scalar WirelessDemo.router.eth[1].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetRemoved)
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac "simulated time" 0.564081463742
+scalar WirelessDemo.router.eth[1].mac full-duplex 1
+scalar WirelessDemo.router.eth[1].mac "frames/sec sent" 0
+scalar WirelessDemo.router.eth[1].mac "frames/sec rcvd" 0
+scalar WirelessDemo.router.eth[1].mac "bits/sec sent" 0
+scalar WirelessDemo.router.eth[1].mac "bits/sec rcvd" 0
+scalar WirelessDemo.router.eth[1].mac "rx channel idle (%)" 100
+scalar WirelessDemo.router.eth[1].mac "rx channel utilization (%)" 0
+scalar WirelessDemo.router.eth[1].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar WirelessDemo.router.eth[1].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar WirelessDemo.router.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessDemo.router.eth[1].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar WirelessDemo.router.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar WirelessDemo.router.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar WirelessDemo.router.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar WirelessDemo.router.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar WirelessDemo.router.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar WirelessDemo.router.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar WirelessDemo.router.eth[1].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar WirelessDemo.router.eth[1].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar WirelessDemo.router.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar WirelessDemo.router.eth[1].encap decapPk:count 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar WirelessDemo.router.eth[1].encap decapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar WirelessDemo.router.eth[1].encap encapPk:count 0
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar WirelessDemo.router.eth[1].encap encapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar WirelessDemo.router.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar WirelessDemo.router.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar WirelessDemo.router.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar WirelessDemo.router.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar WirelessDemo.router.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar WirelessDemo.router.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar WirelessDemo.router.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar WirelessDemo.router.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar WirelessDemo.router.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar WirelessDemo.router.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar WirelessDemo.router.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar WirelessDemo.router.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar WirelessDemo.router.ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar WirelessDemo.router.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar WirelessDemo.router.ipv4.arp arpRequestSent:count 0
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar WirelessDemo.router.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar WirelessDemo.router.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar WirelessDemo.router.ipv4.arp arpResolutionCompleted:count 0
+attr title "ARP completed resolutions, count"
+scalar WirelessDemo.router.ipv4.arp arpResolutionInitiated:count 0
+attr title "ARP initiated resolutions, count"
+scalar WirelessDemo.accessPoint.relayUnit "number of received BPDUs from STP module" 0
+scalar WirelessDemo.accessPoint.relayUnit "number of received frames from network (including BPDUs)" 0
+scalar WirelessDemo.accessPoint.relayUnit "number of dropped frames (including BPDUs)" 0
+scalar WirelessDemo.accessPoint.relayUnit "number of delivered BPDUs to the STP module" 0
+scalar WirelessDemo.accessPoint.relayUnit "number of dispatched BPDU frames to the network" 0
+scalar WirelessDemo.accessPoint.relayUnit "number of dispatched non-BDPU frames to the network" 0
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:count 7
+attr interpolationmode none
+attr title "packet popped, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:sum(packetBytes) 322
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 7
+field mean 0.00014057142857143
+field stddev 0.00024469495100557
+field min 0
+field max 0.000574
+field sum 0.000984
+field sqrsum 4.97576e-007
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	5
+bin	1e-005	0
+bin	2e-005	0
+bin	3e-005	0
+bin	4e-005	0
+bin	5e-005	0
+bin	6e-005	0
+bin	7e-005	0
+bin	8e-005	0
+bin	9e-005	0
+bin	0.0001	0
+bin	0.00011	0
+bin	0.00012	0
+bin	0.00013	0
+bin	0.00014	0
+bin	0.00015	0
+bin	0.00016	0
+bin	0.00017	0
+bin	0.00018	0
+bin	0.00019	0
+bin	0.0002	0
+bin	0.00021	0
+bin	0.00022	0
+bin	0.00023	0
+bin	0.00024	0
+bin	0.00025	0
+bin	0.00026	0
+bin	0.00027	0
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	0
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	0
+bin	0.0004	1
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	0
+bin	0.00044	0
+bin	0.00045	0
+bin	0.00046	0
+bin	0.00047	0
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	0
+bin	0.00051	0
+bin	0.00052	0
+bin	0.00053	0
+bin	0.00054	0
+bin	0.00055	0
+bin	0.00056	0
+bin	0.00057	1
+bin	0.00058	0
+bin	0.00059	0
+bin	0.0006	0
+bin	0.00061	0
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	0
+bin	0.00065	0
+bin	0.00066	0
+bin	0.00067	0
+bin	0.00068	0
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0.0020527528698271
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:count 7
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:sum(packetBytes) 322
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+statistic WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 6
+field mean 5.3503509e-005
+field stddev 1.8379768330381e-005
+field min 4.6e-005
+field max 9.1021054e-005
+field sum 0.000321021054
+field sqrsum 1.8864832271271e-008
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, histogram"
+bin	-inf	0
+bin	3.4e-005	0
+bin	3.5e-005	0
+bin	3.6e-005	0
+bin	3.7e-005	0
+bin	3.8e-005	0
+bin	3.9e-005	0
+bin	4e-005	0
+bin	4.1e-005	0
+bin	4.2e-005	0
+bin	4.3e-005	0
+bin	4.4e-005	0
+bin	4.5e-005	5
+bin	4.6e-005	0
+bin	4.7e-005	0
+bin	4.8e-005	0
+bin	4.9e-005	0
+bin	5e-005	0
+bin	5.1e-005	0
+bin	5.2e-005	0
+bin	5.3e-005	0
+bin	5.4e-005	0
+bin	5.5e-005	0
+bin	5.6e-005	0
+bin	5.7e-005	0
+bin	5.8e-005	0
+bin	5.9e-005	0
+bin	6e-005	0
+bin	6.1e-005	0
+bin	6.2e-005	0
+bin	6.3e-005	0
+bin	6.4e-005	0
+bin	6.5e-005	0
+bin	6.6e-005	0
+bin	6.7e-005	0
+bin	6.8e-005	0
+bin	6.9e-005	0
+bin	7e-005	0
+bin	7.1e-005	0
+bin	7.2e-005	0
+bin	7.3e-005	0
+bin	7.4e-005	0
+bin	7.5e-005	0
+bin	7.6e-005	0
+bin	7.7e-005	0
+bin	7.8e-005	0
+bin	7.9e-005	0
+bin	8e-005	0
+bin	8.1e-005	0
+bin	8.2e-005	0
+bin	8.3e-005	0
+bin	8.4e-005	0
+bin	8.5e-005	0
+bin	8.6e-005	0
+bin	8.7e-005	0
+bin	8.8e-005	0
+bin	8.9e-005	0
+bin	9e-005	0
+bin	9.1e-005	1
+bin	9.2e-005	0
+bin	9.3e-005	0
+bin	9.4e-005	0
+bin	9.5e-005	0
+bin	9.6e-005	0
+bin	9.7e-005	0
+bin	9.8e-005	0
+bin	9.9e-005	0
+bin	0.0001	0
+bin	0.000101	0
+bin	0.000102	0
+bin	0.000103	0
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, max"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.00066969196125347
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.contention stateChanged:count 68
+attr interpolationmode none
+attr title "contention state changed, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess.contention channelAccessGranted:count 7
+attr title "channel access granted, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.channelAccess channelOwnershipChanged:count 13
+attr interpolationmode sample-hold
+attr title "channel ownership, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr title "packets aggregated, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr title "packets fragmented, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr title "packets deaggregated, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.recipientMacDataService packetDefragmented:count 2
+attr title "packets defragmented, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr title "retry limit reached, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeer:count 3
+attr interpolationmode none
+attr title "packets received, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeer:sum(packetBytes) 80
+attr interpolationmode none
+attr title "packets received, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerUnicast:count 2
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 48
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerMulticast:count 1
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:count 1
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:count 3
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 80
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeer:count 7
+attr interpolationmode none
+attr title "packets sent, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeer:sum(packetBytes) 302
+attr interpolationmode none
+attr title "packets sent, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeerUnicast:count 2
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 62
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeerMulticast:count 5
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 240
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeerBroadcast:count 5
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 240
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeerWithoutRetry:count 7
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 302
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetDrop:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac.dcf frameSequenceFinished:count 6
+attr title "finished frame sequences, count"
+statistic WirelessDemo.accessPoint.wlan[0].mac.dcf frameSequenceDuration:histogram
+field count 6
+field mean 5.3503509e-005
+field stddev 1.8379768330381e-005
+field min 4.6e-005
+field max 9.1021054e-005
+field sum 0.000321021054
+field sqrsum 1.8864832271271e-008
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations, histogram"
+bin	-inf	0
+bin	3.4e-005	0
+bin	3.5e-005	0
+bin	3.6e-005	0
+bin	3.7e-005	0
+bin	3.8e-005	0
+bin	3.9e-005	0
+bin	4e-005	0
+bin	4.1e-005	0
+bin	4.2e-005	0
+bin	4.3e-005	0
+bin	4.4e-005	0
+bin	4.5e-005	5
+bin	4.6e-005	0
+bin	4.7e-005	0
+bin	4.8e-005	0
+bin	4.9e-005	0
+bin	5e-005	0
+bin	5.1e-005	0
+bin	5.2e-005	0
+bin	5.3e-005	0
+bin	5.4e-005	0
+bin	5.5e-005	0
+bin	5.6e-005	0
+bin	5.7e-005	0
+bin	5.8e-005	0
+bin	5.9e-005	0
+bin	6e-005	0
+bin	6.1e-005	0
+bin	6.2e-005	0
+bin	6.3e-005	0
+bin	6.4e-005	0
+bin	6.5e-005	0
+bin	6.6e-005	0
+bin	6.7e-005	0
+bin	6.8e-005	0
+bin	6.9e-005	0
+bin	7e-005	0
+bin	7.1e-005	0
+bin	7.2e-005	0
+bin	7.3e-005	0
+bin	7.4e-005	0
+bin	7.5e-005	0
+bin	7.6e-005	0
+bin	7.7e-005	0
+bin	7.8e-005	0
+bin	7.9e-005	0
+bin	8e-005	0
+bin	8.1e-005	0
+bin	8.2e-005	0
+bin	8.3e-005	0
+bin	8.4e-005	0
+bin	8.5e-005	0
+bin	8.6e-005	0
+bin	8.7e-005	0
+bin	8.8e-005	0
+bin	8.9e-005	0
+bin	9e-005	0
+bin	9.1e-005	1
+bin	9.2e-005	0
+bin	9.3e-005	0
+bin	9.4e-005	0
+bin	9.5e-005	0
+bin	9.6e-005	0
+bin	9.7e-005	0
+bin	9.8e-005	0
+bin	9.9e-005	0
+bin	0.0001	0
+bin	0.000101	0
+bin	0.000102	0
+bin	0.000103	0
+statistic WirelessDemo.accessPoint.wlan[0].mac.dcf frameSequenceNumPackets:histogram
+field count 6
+field mean 1.1666666666667
+field stddev 0.40824829046386
+field min 1
+field max 2
+field sum 7
+field sqrsum 9
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	5
+bin	2	1
+bin	3	0
+scalar WirelessDemo.accessPoint.wlan[0].mac packetReceivedFromLower:count 3
+attr interpolationmode none
+attr title "packets received from lower layer, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetReceivedFromLower:sum(packetBytes) 80
+attr interpolationmode none
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetSentToLower:count 8
+attr interpolationmode none
+attr title "packets sent to lower layer, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetSentToLower:sum(packetBytes) 336
+attr interpolationmode none
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr title "packets received from upper layer, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetSentToUpper:count 0
+attr interpolationmode none
+attr title "packets sent to upper layer, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDrop:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropOther:count 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar WirelessDemo.accessPoint.wlan[0].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+statistic WirelessDemo.accessPoint.wlan[0].radio minSnir:histogram
+field count 3
+field mean 8352.5188990559
+field stddev 0.0001220703125
+field min 8352.5188990559
+field max 8352.5188990559
+field sum 25057.556697168
+field sqrsum 209293715.87726
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	8352	0
+bin	8352.02	0
+bin	8352.04	0
+bin	8352.06	0
+bin	8352.08	0
+bin	8352.1	0
+bin	8352.12	0
+bin	8352.14	0
+bin	8352.16	0
+bin	8352.18	0
+bin	8352.2	0
+bin	8352.22	0
+bin	8352.24	0
+bin	8352.26	0
+bin	8352.28	0
+bin	8352.3	0
+bin	8352.32	0
+bin	8352.34	0
+bin	8352.36	0
+bin	8352.38	0
+bin	8352.4	0
+bin	8352.42	0
+bin	8352.44	0
+bin	8352.46	0
+bin	8352.48	0
+bin	8352.5	3
+bin	8352.52	0
+bin	8352.54	0
+bin	8352.56	0
+bin	8352.58	0
+bin	8352.6	0
+bin	8352.62	0
+bin	8352.64	0
+bin	8352.66	0
+bin	8352.68	0
+bin	8352.7	0
+bin	8352.72	0
+bin	8352.74	0
+bin	8352.76	0
+bin	8352.78	0
+bin	8352.8	0
+bin	8352.82	0
+bin	8352.84	0
+bin	8352.86	0
+bin	8352.88	0
+bin	8352.9	0
+bin	8352.92	0
+bin	8352.94	0
+bin	8352.96	0
+bin	8352.98	0
+bin	8353	0
+bin	8353.02	0
+statistic WirelessDemo.accessPoint.wlan[0].radio packetErrorRate:histogram
+field count 3
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	3
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic WirelessDemo.accessPoint.wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic WirelessDemo.accessPoint.wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.accessPoint.wlan[0].radio transmissionState:count 29
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar WirelessDemo.accessPoint.wlan[0].radio receptionState:count 22
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar WirelessDemo.accessPoint.wlan[0].radio radioMode:count 18
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic WirelessDemo.accessPoint.wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.classifier packetPushed:count 0
+attr interpolationmode none
+attr title "packets pushed, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.classifier packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets pushed, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.classifier packetDropped:count 0
+attr interpolationmode none
+attr title "packets dropped, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.classifier packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets dropped, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue packetPopped:count 0
+attr interpolationmode none
+attr title "packet popped, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue packetPushed:count 0
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.pauseQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue packetPopped:count 0
+attr interpolationmode none
+attr title "packet popped, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue packetPushed:count 0
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.dataQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.scheduler packetPopped:count 0
+attr interpolationmode none
+attr title "packets popped, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue.scheduler packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets popped, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue packetPopped:count 0
+attr interpolationmode none
+attr source localSignal(packetPopped)
+attr title "packets popped, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue packetPopped:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetPopped)
+attr title "packets popped, sum(packetBytes)"
+statistic WirelessDemo.accessPoint.eth[0].mac.queue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar WirelessDemo.accessPoint.eth[0].mac.queue queueLength:max nan
+attr interpolationmode sample-hold
+attr source "count(localSignal(packetPushed)) - count(localSignal(packetPopped)) - count(localSignal(packetRemoved)) - count(packetDropped)"
+attr title "queue length, max"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr source "count(localSignal(packetPushed)) - count(localSignal(packetPopped)) - count(localSignal(packetRemoved)) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue packetPushed:count 0
+attr interpolationmode none
+attr source localSignal(packetPushed)
+attr title "packets pushed, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue packetPushed:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetPushed)
+attr title "packets pushed, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packets dropped: queue overflow, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packets dropped: queue overflow, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr source localSignal(packetRemoved)
+attr title "packets removed, count"
+scalar WirelessDemo.accessPoint.eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr source localSignal(packetRemoved)
+attr title "packets removed, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac "simulated time" 0.564081463742
+scalar WirelessDemo.accessPoint.eth[0].mac full-duplex 1
+scalar WirelessDemo.accessPoint.eth[0].mac "frames/sec sent" 0
+scalar WirelessDemo.accessPoint.eth[0].mac "frames/sec rcvd" 0
+scalar WirelessDemo.accessPoint.eth[0].mac "bits/sec sent" 0
+scalar WirelessDemo.accessPoint.eth[0].mac "bits/sec rcvd" 0
+scalar WirelessDemo.accessPoint.eth[0].mac "rx channel idle (%)" 100
+scalar WirelessDemo.accessPoint.eth[0].mac "rx channel utilization (%)" 0
+scalar WirelessDemo.accessPoint.eth[0].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar WirelessDemo.accessPoint.eth[0].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar WirelessDemo.accessPoint.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar WirelessDemo.accessPoint.eth[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar WirelessDemo.accessPoint.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar WirelessDemo.accessPoint.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar WirelessDemo.accessPoint.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar WirelessDemo.accessPoint.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar WirelessDemo.accessPoint.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar WirelessDemo.accessPoint.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar WirelessDemo.accessPoint.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar WirelessDemo.accessPoint.eth[0].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar WirelessDemo.accessPoint.eth[0].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+

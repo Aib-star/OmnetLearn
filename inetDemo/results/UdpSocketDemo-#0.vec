@@ -1,0 +1,169 @@
+version 2
+run UdpSocketDemo-0-20230215-17:50:25-14156
+attr configname UdpSocketDemo
+attr datetime 20230215-17:50:25
+attr experiment UdpSocketDemo
+attr inifile udpsocket.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network UdpSocketDemo
+attr processid 14156
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.*.numApps 1
+param **.client.app[0].typename "\"UDPCSApp\""
+param **.client.app[0].localPort 8088
+param **.client.app[*].destPort 1000
+param **.client.app[*].destAddresses "\"server\""
+param **.client.app[0].sendInterval 1s
+param **.client.app[0].messageLength 1000B
+param **.client.app[0].stopTime 25s
+param **.server.app[*].typename "\"UDPCSApp\""
+param **.server.app[*].localPort 1000
+param **.server.app[*].destPort -1
+param **.server.app[*].destAddresses "\"\""
+param **.server.app[0].sendInterval 1s
+param **.server.app[0].messageLength 1000B
+param **.server.app[0].stopTime 25s
+param *.pathVisualizer.*.displayRoutes true
+
+vector 0 UdpSocketDemo.client.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 1 UdpSocketDemo.server.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 2 UdpSocketDemo.client.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 3 UdpSocketDemo.client.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 4 UdpSocketDemo.client.ppp[0].ppp.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 5 UdpSocketDemo.client.ppp[0].ppp.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 6 UdpSocketDemo.client.ppp[0].ppp.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 7 UdpSocketDemo.client.ppp[0].ppp.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 8 UdpSocketDemo.client.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 9 UdpSocketDemo.server.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 10 UdpSocketDemo.server.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 11 UdpSocketDemo.server.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 12 UdpSocketDemo.server.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+0	0	0	0
+0	7	1	1
+0	8	1.000828	0
+0	16	2	1
+0	17	2.000828	0
+0	25	3	1
+0	26	3.000828	0
+0	34	4	1
+0	35	4.000828	0
+0	43	5	1
+0	44	5.000828	0
+0	52	6	1
+0	53	6.000828	0
+1	0	0	0
+2	4	1	1008
+2	14	2	1008
+2	23	3	1008
+2	32	4	1008
+2	41	5	1008
+2	50	6	1008
+3	7	1	1028
+3	16	2	1028
+3	25	3	1028
+3	34	4	1028
+3	43	5	1028
+3	52	6	1028
+4	7	1	1028
+4	16	2	1028
+4	25	3	1028
+4	34	4	1028
+4	43	5	1028
+4	52	6	1028
+5	7	1	1
+5	7	1	0
+5	16	2	1
+5	16	2	0
+5	25	3	1
+5	25	3	0
+5	34	4	1
+5	34	4	0
+5	43	5	1
+5	43	5	0
+5	52	6	1
+5	52	6	0
+6	7	1	1028
+6	16	2	1028
+6	25	3	1028
+6	34	4	1028
+6	43	5	1028
+6	52	6	1028
+7	7	1	0
+7	16	2	0
+7	25	3	0
+7	34	4	0
+7	43	5	0
+7	52	6	0
+8	7	1	1035
+8	16	2	1035
+8	25	3	1035
+8	34	4	1035
+8	43	5	1035
+8	52	6	1035
+9	9	1.0008281	1035
+9	18	2.0008281	1035
+9	27	3.0008281	1035
+9	36	4.0008281	1035
+9	45	5.0008281	1035
+9	54	6.0008281	1035
+10	9	1.0008281	1028
+10	18	2.0008281	1028
+10	27	3.0008281	1028
+10	36	4.0008281	1028
+10	45	5.0008281	1028
+10	54	6.0008281	1028
+11	11	1.0008281	1008
+11	20	2.0008281	1008
+11	29	3.0008281	1008
+11	38	4.0008281	1008
+11	47	5.0008281	1008
+12	11	1.0008281	1
+12	20	2.0008281	2
+12	29	3.0008281	3
+12	38	4.0008281	4
+12	47	5.0008281	5
+

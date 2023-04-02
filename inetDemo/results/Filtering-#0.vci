@@ -1,0 +1,119 @@
+file 5005 1676454614                                            
+version 2
+run Filtering-0-20230215-17:49:09-21160
+attr configname Filtering
+attr datetime 20230215-17:49:09
+attr experiment Filtering
+attr inifile udpsocket.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TransportPathVisualizerFilteringShowcase
+attr processid 21160
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.arp.typename "\"GlobalArp\""
+param *.source*.numApps 1
+param *.source*.app[0].typename "\"UdpBasicApp\""
+param *.source*.app[0].destPort 1000
+param *.source*.app[0].messageLength 100B
+param *.source*.app[0].startTime 0s
+param *.source1.app[0].destAddresses "\"destination1\""
+param *.source1.app[0].sendInterval 0.6s
+param *.source2.app[0].destAddresses "\"destination2\""
+param *.source2.app[0].sendInterval 0.8s
+param *.destination*.numApps 1
+param *.destination*.app[0].typename "\"UdpSink\""
+param *.destination*.app[0].localPort 1000
+param *.videoStreamClient.numApps 1
+param *.videoStreamClient.app[0].typename "\"UdpVideoStreamClient\""
+param *.videoStreamClient.app[0].serverAddress "\"videoStreamServer\""
+param *.videoStreamClient.app[0].serverPort 554
+param *.videoStreamServer.numApps 1
+param *.videoStreamServer.app[0].typename "\"UdpVideoStreamServer\""
+param *.videoStreamServer.app[0].localPort 554
+param *.videoStreamServer.app[0].sendInterval 1s
+param *.videoStreamServer.app[0].packetLen 5000B
+param *.videoStreamServer.app[0].videoSize 300000B
+param *.visualizer.*.transportRouteVisualizer.displayRoutes true
+param *.visualizer.*.transportRouteVisualizer.fadeOutMode "\"simulationTime\""
+param *.visualizer.*.transportRouteVisualizer.fadeOutTime 1.2s
+param *.visualizer.*.transportRouteVisualizer.packetFilter "\"*UdpBasicAppData*\""
+param *.visualizer.*.transportRouteVisualizer.nodeFilter "\"source1 or switch* or router* or destination1\""
+param **.ppp[*].ppp.queue.typename "\"DropTailQueue\""
+param **.ppp[*].ppp.queue.packetCapacity 10
+
+vector 0 TransportPathVisualizerFilteringShowcase.router0.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 1 TransportPathVisualizerFilteringShowcase.router0.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 2 TransportPathVisualizerFilteringShowcase.router0.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 3 TransportPathVisualizerFilteringShowcase.router1.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 4 TransportPathVisualizerFilteringShowcase.router1.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 5 TransportPathVisualizerFilteringShowcase.router2.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 6 TransportPathVisualizerFilteringShowcase.router2.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 7 TransportPathVisualizerFilteringShowcase.router2.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 8 TransportPathVisualizerFilteringShowcase.router3.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 9 TransportPathVisualizerFilteringShowcase.router3.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 10 TransportPathVisualizerFilteringShowcase.router4.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 11 TransportPathVisualizerFilteringShowcase.router4.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 12 TransportPathVisualizerFilteringShowcase.router4.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 13 TransportPathVisualizerFilteringShowcase.router4.ppp[3].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+0	4873 9 0 0 0 0 1 0 0 0 0
+1	4882 9 0 0 0 0 1 0 0 0 0
+2	4891 9 0 0 0 0 1 0 0 0 0
+3	4900 9 0 0 0 0 1 0 0 0 0
+4	4909 9 0 0 0 0 1 0 0 0 0
+5	4918 9 0 0 0 0 1 0 0 0 0
+6	4927 9 0 0 0 0 1 0 0 0 0
+7	4936 9 0 0 0 0 1 0 0 0 0
+8	4945 9 0 0 0 0 1 0 0 0 0
+9	4954 9 0 0 0 0 1 0 0 0 0
+10	4963 10 0 0 0 0 1 0 0 0 0
+11	4973 10 0 0 0 0 1 0 0 0 0
+12	4983 10 0 0 0 0 1 0 0 0 0
+13	4993 10 0 0 0 0 1 0 0 0 0
+

@@ -1,0 +1,1047 @@
+version 2
+run EnablingPathVisualizationWireless-0-20230215-16:49:18-19852
+attr configname EnablingPathVisualizationWireless
+attr datetime 20230215-16:49:18
+attr experiment EnablingPathVisualizationWireless
+attr inifile udpsocket.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TransportPathVisualizerSimpleWirelessShowcase
+attr processid 19852
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.source.numApps 1
+param *.source.app[0].typename "\"UdpBasicApp\""
+param *.source.app[0].destAddresses "\"destination\""
+param *.source.app[0].destPort 1000
+param *.source.app[0].messageLength 100B
+param *.source.app[0].startTime 0s
+param *.source.app[0].sendInterval 1s
+param *.destination.numApps 1
+param *.destination.app[0].typename "\"UdpSink\""
+param *.destination.app[0].localPort 1000
+param *.pathVisualizer.*.displayRoutes true
+param *.pathVisualizer.*.fadeOutTime 3s
+param *.*.numApps 1
+param **.client.app[0].typename "\"UDPCSApp\""
+param **.client.app[0].localPort 8088
+param **.client.app[*].destPort 1000
+param **.client.app[*].destAddresses "\"server\""
+param **.client.app[0].sendInterval 1s
+param **.client.app[0].messageLength 1000B
+param **.client.app[0].stopTime 25s
+param **.server.app[*].typename "\"UDPCSApp\""
+param **.server.app[*].localPort 1000
+param **.server.app[*].destPort -1
+param **.server.app[*].destAddresses "\"\""
+param **.server.app[0].sendInterval 1s
+param **.server.app[0].messageLength 1000B
+param **.server.app[0].stopTime 25s
+param *.pathVisualizer.*.displayRoutes true
+
+vector 0 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 4 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 5 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 6 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 7 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 8 TransportPathVisualizerSimpleWirelessShowcase.source.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 9 TransportPathVisualizerSimpleWirelessShowcase.source.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 10 TransportPathVisualizerSimpleWirelessShowcase.source.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 11 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 12 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 13 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 14 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 15 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 16 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 17 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 18 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 19 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 20 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 21 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 22 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 23 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 24 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 25 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetSentToPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , vector(packetBytes)"
+vector 26 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 27 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 28 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 29 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 30 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 31 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, vector(packetBytes)"
+vector 32 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 33 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 34 TransportPathVisualizerSimpleWirelessShowcase.destination.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 35 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 36 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 37 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 38 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 39 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 40 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 41 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 42 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 43 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 44 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 45 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 46 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 47 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 48 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 49 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 50 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 51 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 52 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 53 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 54 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 55 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 56 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 57 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 58 TransportPathVisualizerSimpleWirelessShowcase.destination.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 59 TransportPathVisualizerSimpleWirelessShowcase.source.wlan[0].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 60 TransportPathVisualizerSimpleWirelessShowcase.destination.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 61 TransportPathVisualizerSimpleWirelessShowcase.destination.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 62 TransportPathVisualizerSimpleWirelessShowcase.destination.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 63 TransportPathVisualizerSimpleWirelessShowcase.destination.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 64 TransportPathVisualizerSimpleWirelessShowcase.destination.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number, vector"
+vector 65 TransportPathVisualizerSimpleWirelessShowcase.destination.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+0	0	0	0
+0	0	0	0
+0	0	0	2
+0	12	0.00019	3
+0	16	0.00024	2
+0	37	0.000531334256	3
+0	42	0.000565334256	2
+0	47	0.000995334256	3
+0	51	0.001077334256	2
+0	79	1	3
+0	83	1.000082	2
+0	108	2	3
+0	112	2.000082	2
+0	137	3	3
+0	141	3.000082	2
+0	166	4	3
+0	170	4.000082	2
+0	195	5	3
+0	199	5.000082	2
+0	224	6	3
+0	228	6.000082	2
+0	253	7	3
+0	257	7.000082	2
+1	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	2
+2	25	0.000470667128	3
+2	29	0.000520667128	2
+2	59	0.001088001384	3
+2	64	0.001122001384	2
+2	91	1.000092667128	3
+2	96	1.000126667128	2
+2	120	2.000092667128	3
+2	125	2.000126667128	2
+2	149	3.000092667128	3
+2	154	3.000126667128	2
+2	178	4.000092667128	3
+2	183	4.000126667128	2
+2	207	5.000092667128	3
+2	212	5.000126667128	2
+2	236	6.000092667128	3
+2	241	6.000126667128	2
+2	265	7.000092667128	3
+2	270	7.000126667128	2
+3	0	0	0
+4	0	0	1
+4	12	0.00019	0
+4	16	0.00024	1
+4	27	0.000471334256	3
+4	30	0.000521334256	1
+4	37	0.000531334256	0
+4	42	0.000565334256	1
+4	47	0.000995334256	0
+4	51	0.001077334256	1
+4	61	0.001088668512	3
+4	65	0.001122668512	1
+4	79	1	0
+4	83	1.000082	1
+4	93	1.000093334256	3
+4	97	1.000127334256	1
+4	108	2	0
+4	112	2.000082	1
+4	122	2.000093334256	3
+4	126	2.000127334256	1
+4	137	3	0
+4	141	3.000082	1
+4	151	3.000093334256	3
+4	155	3.000127334256	1
+4	166	4	0
+4	170	4.000082	1
+4	180	4.000093334256	3
+4	184	4.000127334256	1
+4	195	5	0
+4	199	5.000082	1
+4	209	5.000093334256	3
+4	213	5.000127334256	1
+4	224	6	0
+4	228	6.000082	1
+4	238	6.000093334256	3
+4	242	6.000127334256	1
+4	253	7	0
+4	257	7.000082	1
+4	267	7.000093334256	3
+4	271	7.000127334256	1
+5	0	0	1
+5	14	0.000190667128	3
+5	17	0.000240667128	1
+5	25	0.000470667128	0
+5	29	0.000520667128	1
+5	39	0.000532001384	3
+5	43	0.000566001384	1
+5	49	0.000996001384	3
+5	52	0.001078001384	1
+5	59	0.001088001384	0
+5	64	0.001122001384	1
+5	81	1.000000667128	3
+5	84	1.000082667128	1
+5	91	1.000092667128	0
+5	96	1.000126667128	1
+5	110	2.000000667128	3
+5	113	2.000082667128	1
+5	120	2.000092667128	0
+5	125	2.000126667128	1
+5	139	3.000000667128	3
+5	142	3.000082667128	1
+5	149	3.000092667128	0
+5	154	3.000126667128	1
+5	168	4.000000667128	3
+5	171	4.000082667128	1
+5	178	4.000092667128	0
+5	183	4.000126667128	1
+5	197	5.000000667128	3
+5	200	5.000082667128	1
+5	207	5.000092667128	0
+5	212	5.000126667128	1
+5	226	6.000000667128	3
+5	229	6.000082667128	1
+5	236	6.000092667128	0
+5	241	6.000126667128	1
+5	255	7.000000667128	3
+5	258	7.000082667128	1
+5	265	7.000092667128	0
+5	270	7.000126667128	1
+6	0	0	31
+7	0	0	31
+8	1	0	100
+8	72	1	100
+8	101	2	100
+8	130	3	100
+8	159	4	100
+8	188	5	100
+8	217	6	100
+8	246	7	100
+9	4	0	108
+9	73	1	108
+9	102	2	108
+9	131	3	108
+9	160	4	108
+9	189	5	108
+9	218	6	108
+9	247	7	108
+10	7	0	28
+11	9	0	36
+11	35	0.000521334256	136
+11	76	1	136
+11	105	2	136
+11	134	3	136
+11	163	4	136
+11	192	5	136
+11	221	6	136
+11	250	7	136
+12	9	0	64
+12	35	0.000521334256	164
+12	76	1	164
+12	105	2	164
+12	134	3	164
+12	163	4	164
+12	192	5	164
+12	221	6	164
+12	250	7	164
+13	9	0	1
+13	11	0.00019	0
+13	35	0.000521334256	1
+13	46	0.000995334256	0
+13	76	1	1
+13	78	1	0
+13	105	2	1
+13	107	2	0
+13	134	3	1
+13	136	3	0
+13	163	4	1
+13	165	4	0
+13	192	5	1
+13	194	5	0
+13	221	6	1
+13	223	6	0
+13	250	7	1
+13	252	7	0
+14	9	0	7
+14	35	0.000521334256	19
+14	76	1	18
+14	105	2	23
+14	134	3	24
+14	163	4	12
+14	192	5	1
+14	221	6	7
+14	250	7	14
+15	9	0	1
+15	10	0.00019	0
+15	35	0.000521334256	1
+15	37	0.000531334256	0
+15	42	0.000565334256	1
+15	45	0.000995334256	0
+15	76	1	1
+15	77	1	0
+15	105	2	1
+15	106	2	0
+15	134	3	1
+15	135	3	0
+15	163	4	1
+15	164	4	0
+15	192	5	1
+15	193	5	0
+15	221	6	1
+15	222	6	0
+15	250	7	1
+15	251	7	0
+16	11	0.00019	64
+16	46	0.000995334256	164
+16	78	1	164
+16	107	2	164
+16	136	3	164
+16	165	4	164
+16	194	5	164
+16	223	6	164
+16	252	7	164
+17	11	0.00019	0.00019
+17	46	0.000995334256	0.000474
+17	78	1	0
+17	107	2	0
+17	136	3	0
+17	165	4	0
+17	194	5	0
+17	223	6	0
+17	252	7	0
+18	11	0.00019	1
+18	15	0.00024	0
+18	46	0.000995334256	1
+18	66	0.001122668512	0
+18	78	1	1
+18	98	1.000127334256	0
+18	107	2	1
+18	127	2.000127334256	0
+18	136	3	1
+18	156	3.000127334256	0
+18	165	4	1
+18	185	4.000127334256	0
+18	194	5	1
+18	214	5.000127334256	0
+18	223	6	1
+18	243	6.000127334256	0
+18	252	7	1
+18	272	7.000127334256	0
+19	11	0.00019	24000000
+19	31	0.000521334256	24000000
+19	46	0.000995334256	24000000
+19	78	1	24000000
+19	107	2	24000000
+19	136	3	24000000
+19	165	4	24000000
+19	194	5	24000000
+19	223	6	24000000
+19	252	7	24000000
+20	11	0.00019	64
+20	36	0.000531334256	14
+20	46	0.000995334256	164
+20	78	1	164
+20	107	2	164
+20	136	3	164
+20	165	4	164
+20	194	5	164
+20	223	6	164
+20	252	7	164
+21	11	0.00019	1
+21	15	0.00024	0
+21	46	0.000995334256	1
+21	66	0.001122668512	0
+21	78	1	1
+21	98	1.000127334256	0
+21	107	2	1
+21	127	2.000127334256	0
+21	136	3	1
+21	156	3.000127334256	0
+21	165	4	1
+21	185	4.000127334256	0
+21	194	5	1
+21	214	5.000127334256	0
+21	223	6	1
+21	243	6.000127334256	0
+21	252	7	1
+21	272	7.000127334256	0
+22	12	0.00019	1
+22	13	0.00019	2
+22	15	0.00024	1
+22	16	0.00024	0
+22	37	0.000531334256	1
+22	38	0.000531334256	2
+22	41	0.000565334256	1
+22	42	0.000565334256	0
+22	47	0.000995334256	1
+22	48	0.000995334256	2
+22	50	0.001077334256	1
+22	51	0.001077334256	0
+22	79	1	1
+22	80	1	2
+22	82	1.000082	1
+22	83	1.000082	0
+22	108	2	1
+22	109	2	2
+22	111	2.000082	1
+22	112	2.000082	0
+22	137	3	1
+22	138	3	2
+22	140	3.000082	1
+22	141	3.000082	0
+22	166	4	1
+22	167	4	2
+22	169	4.000082	1
+22	170	4.000082	0
+22	195	5	1
+22	196	5	2
+22	198	5.000082	1
+22	199	5.000082	0
+22	224	6	1
+22	225	6	2
+22	227	6.000082	1
+22	228	6.000082	0
+22	253	7	1
+22	254	7	2
+22	256	7.000082	1
+22	257	7.000082	0
+23	15	0.00024	64
+23	41	0.000565334256	14
+23	50	0.001077334256	164
+23	82	1.000082	164
+23	111	2.000082	164
+23	140	3.000082	164
+23	169	4.000082	164
+23	198	5.000082	164
+23	227	6.000082	164
+23	256	7.000082	164
+24	15	0.00024	64
+25	15	0.00024	64
+26	15	0.00024	64
+26	41	0.000565334256	14
+26	50	0.001077334256	164
+26	82	1.000082	164
+26	111	2.000082	164
+26	140	3.000082	164
+26	169	4.000082	164
+26	198	5.000082	164
+26	227	6.000082	164
+26	256	7.000082	164
+27	15	0.00024	5e-005
+27	66	0.001122668512	0.000127334256
+27	98	1.000127334256	0.000127334256
+27	127	2.000127334256	0.000127334256
+27	156	3.000127334256	0.000127334256
+27	185	4.000127334256	0.000127334256
+27	214	5.000127334256	0.000127334256
+27	243	6.000127334256	0.000127334256
+27	272	7.000127334256	0.000127334256
+28	18	0.000240667128	64
+28	44	0.000566001384	14
+28	53	0.001078001384	164
+28	85	1.000082667128	164
+28	114	2.000082667128	164
+28	143	3.000082667128	164
+28	172	4.000082667128	164
+28	201	5.000082667128	164
+28	230	6.000082667128	164
+28	259	7.000082667128	164
+29	18	0.000240667128	64
+29	44	0.000566001384	14
+29	53	0.001078001384	164
+29	85	1.000082667128	164
+29	114	2.000082667128	164
+29	143	3.000082667128	164
+29	172	4.000082667128	164
+29	201	5.000082667128	164
+29	230	6.000082667128	164
+29	259	7.000082667128	164
+30	18	0.000240667128	64
+31	18	0.000240667128	64
+32	18	0.000240667128	64
+32	44	0.000566001384	14
+32	53	0.001078001384	164
+32	85	1.000082667128	164
+32	114	2.000082667128	164
+32	143	3.000082667128	164
+32	172	4.000082667128	164
+32	201	5.000082667128	164
+32	230	6.000082667128	164
+32	259	7.000082667128	164
+33	18	0.000240667128	36
+33	53	0.001078001384	136
+33	85	1.000082667128	136
+33	114	2.000082667128	136
+33	143	3.000082667128	136
+33	172	4.000082667128	136
+33	201	5.000082667128	136
+33	230	6.000082667128	136
+33	259	7.000082667128	136
+34	20	0.000240667128	28
+35	22	0.000240667128	36
+36	22	0.000240667128	64
+37	22	0.000240667128	1
+37	24	0.000470667128	0
+38	22	0.000240667128	9
+39	22	0.000240667128	1
+39	23	0.000470667128	0
+40	24	0.000470667128	64
+41	24	0.000470667128	0.00023
+42	24	0.000470667128	1
+42	44	0.000566001384	0
+43	24	0.000470667128	24000000
+43	53	0.001078001384	24000000
+43	85	1.000082667128	24000000
+43	114	2.000082667128	24000000
+43	143	3.000082667128	24000000
+43	172	4.000082667128	24000000
+43	201	5.000082667128	24000000
+43	230	6.000082667128	24000000
+43	259	7.000082667128	24000000
+44	24	0.000470667128	64
+44	58	0.001088001384	14
+44	90	1.000092667128	14
+44	119	2.000092667128	14
+44	148	3.000092667128	14
+44	177	4.000092667128	14
+44	206	5.000092667128	14
+44	235	6.000092667128	14
+44	264	7.000092667128	14
+45	24	0.000470667128	1
+45	44	0.000566001384	0
+46	25	0.000470667128	1
+46	26	0.000470667128	2
+46	28	0.000520667128	1
+46	29	0.000520667128	0
+46	59	0.001088001384	1
+46	60	0.001088001384	2
+46	63	0.001122001384	1
+46	64	0.001122001384	0
+46	91	1.000092667128	1
+46	92	1.000092667128	2
+46	95	1.000126667128	1
+46	96	1.000126667128	0
+46	120	2.000092667128	1
+46	121	2.000092667128	2
+46	124	2.000126667128	1
+46	125	2.000126667128	0
+46	149	3.000092667128	1
+46	150	3.000092667128	2
+46	153	3.000126667128	1
+46	154	3.000126667128	0
+46	178	4.000092667128	1
+46	179	4.000092667128	2
+46	182	4.000126667128	1
+46	183	4.000126667128	0
+46	207	5.000092667128	1
+46	208	5.000092667128	2
+46	211	5.000126667128	1
+46	212	5.000126667128	0
+46	236	6.000092667128	1
+46	237	6.000092667128	2
+46	240	6.000126667128	1
+46	241	6.000126667128	0
+46	265	7.000092667128	1
+46	266	7.000092667128	2
+46	269	7.000126667128	1
+46	270	7.000126667128	0
+47	28	0.000520667128	64
+47	63	0.001122001384	14
+47	95	1.000126667128	14
+47	124	2.000126667128	14
+47	153	3.000126667128	14
+47	182	4.000126667128	14
+47	211	5.000126667128	14
+47	240	6.000126667128	14
+47	269	7.000126667128	14
+48	28	0.000520667128	64
+48	63	0.001122001384	14
+48	95	1.000126667128	14
+48	124	2.000126667128	14
+48	153	3.000126667128	14
+48	182	4.000126667128	14
+48	211	5.000126667128	14
+48	240	6.000126667128	14
+48	269	7.000126667128	14
+49	28	0.000520667128	64
+49	63	0.001122001384	14
+49	95	1.000126667128	14
+49	124	2.000126667128	14
+49	153	3.000126667128	14
+49	182	4.000126667128	14
+49	211	5.000126667128	14
+49	240	6.000126667128	14
+49	269	7.000126667128	14
+50	28	0.000520667128	0
+50	28	0.000520667128	4.4e-005
+50	40	0.000564667128	0
+51	31	0.000521334256	64
+51	66	0.001122668512	14
+51	98	1.000127334256	14
+51	127	2.000127334256	14
+51	156	3.000127334256	14
+51	185	4.000127334256	14
+51	214	5.000127334256	14
+51	243	6.000127334256	14
+51	272	7.000127334256	14
+52	31	0.000521334256	64
+52	66	0.001122668512	14
+52	98	1.000127334256	14
+52	127	2.000127334256	14
+52	156	3.000127334256	14
+52	185	4.000127334256	14
+52	214	5.000127334256	14
+52	243	6.000127334256	14
+52	272	7.000127334256	14
+53	31	0.000521334256	64
+53	66	0.001122668512	14
+53	98	1.000127334256	14
+53	127	2.000127334256	14
+53	156	3.000127334256	14
+53	185	4.000127334256	14
+53	214	5.000127334256	14
+53	243	6.000127334256	14
+53	272	7.000127334256	14
+54	31	0.000521334256	64
+54	66	0.001122668512	14
+54	98	1.000127334256	14
+54	127	2.000127334256	14
+54	156	3.000127334256	14
+54	185	4.000127334256	14
+54	214	5.000127334256	14
+54	243	6.000127334256	14
+54	272	7.000127334256	14
+55	31	0.000521334256	36
+56	41	0.000565334256	14
+56	50	0.001077334256	164
+56	82	1.000082	164
+56	111	2.000082	164
+56	140	3.000082	164
+56	169	4.000082	164
+56	198	5.000082	164
+56	227	6.000082	164
+56	256	7.000082	164
+57	44	0.000566001384	14
+57	53	0.001078001384	164
+57	85	1.000082667128	164
+57	114	2.000082667128	164
+57	143	3.000082667128	164
+57	172	4.000082667128	164
+57	201	5.000082667128	164
+57	230	6.000082667128	164
+57	259	7.000082667128	164
+58	44	0.000566001384	9.5334256e-005
+59	50	0.001077334256	0
+59	50	0.001077334256	4.4e-005
+59	62	0.001121334256	0
+59	82	1.000082	0
+59	82	1.000082	4.4e-005
+59	94	1.000126	0
+59	111	2.000082	0
+59	111	2.000082	4.4e-005
+59	123	2.000126	0
+59	140	3.000082	0
+59	140	3.000082	4.4e-005
+59	152	3.000126	0
+59	169	4.000082	0
+59	169	4.000082	4.4e-005
+59	181	4.000126	0
+59	198	5.000082	0
+59	198	5.000082	4.4e-005
+59	210	5.000126	0
+59	227	6.000082	0
+59	227	6.000082	4.4e-005
+59	239	6.000126	0
+59	256	7.000082	0
+59	256	7.000082	4.4e-005
+59	268	7.000126	0
+60	56	0.001078001384	108
+60	88	1.000082667128	108
+60	117	2.000082667128	108
+60	146	3.000082667128	108
+60	175	4.000082667128	108
+60	204	5.000082667128	108
+60	233	6.000082667128	108
+60	262	7.000082667128	108
+61	56	0.001078001384	1
+61	88	1.000082667128	2
+61	117	2.000082667128	3
+61	146	3.000082667128	4
+61	175	4.000082667128	5
+61	204	5.000082667128	6
+61	233	6.000082667128	7
+61	262	7.000082667128	8
+62	57	0.001078001384	100
+62	89	1.000082667128	100
+62	118	2.000082667128	100
+62	147	3.000082667128	100
+62	176	4.000082667128	100
+62	205	5.000082667128	100
+62	234	6.000082667128	100
+62	263	7.000082667128	100
+63	57	0.001078001384	0.001078001384
+63	89	1.000082667128	8.2667128e-005
+63	118	2.000082667128	8.2667128e-005
+63	147	3.000082667128	8.2667128e-005
+63	176	4.000082667128	8.2667128e-005
+63	205	5.000082667128	8.2667128e-005
+63	234	6.000082667128	8.2667128e-005
+63	263	7.000082667128	8.2667128e-005
+64	57	0.001078001384	0
+64	89	1.000082667128	1
+64	118	2.000082667128	2
+64	147	3.000082667128	3
+64	176	4.000082667128	4
+64	205	5.000082667128	5
+64	234	6.000082667128	6
+64	263	7.000082667128	7
+65	89	0.1	8000
+65	89	0.2	0
+65	89	0.3	0
+65	89	0.4	0
+65	89	0.5	0
+65	89	0.6	0
+65	89	0.7	0
+65	89	0.8	0
+65	89	0.9	0
+65	89	1	0
+65	118	1.1	8000
+65	118	1.2	0
+65	118	1.3	0
+65	118	1.4	0
+65	118	1.5	0
+65	118	1.6	0
+65	118	1.7	0
+65	118	1.8	0
+65	118	1.9	0
+65	118	2	0
+65	147	2.1	8000
+65	147	2.2	0
+65	147	2.3	0
+65	147	2.4	0
+65	147	2.5	0
+65	147	2.6	0
+65	147	2.7	0
+65	147	2.8	0
+65	147	2.9	0
+65	147	3	0
+65	176	3.1	8000
+65	176	3.2	0
+65	176	3.3	0
+65	176	3.4	0
+65	176	3.5	0
+65	176	3.6	0
+65	176	3.7	0
+65	176	3.8	0
+65	176	3.9	0
+65	176	4	0
+65	205	4.1	8000
+65	205	4.2	0
+65	205	4.3	0
+65	205	4.4	0
+65	205	4.5	0
+65	205	4.6	0
+65	205	4.7	0
+65	205	4.8	0
+65	205	4.9	0
+65	205	5	0
+65	234	5.1	8000
+65	234	5.2	0
+65	234	5.3	0
+65	234	5.4	0
+65	234	5.5	0
+65	234	5.6	0
+65	234	5.7	0
+65	234	5.8	0
+65	234	5.9	0
+65	234	6	0
+65	263	6.1	8000
+65	263	6.2	0
+65	263	6.3	0
+65	263	6.4	0
+65	263	6.5	0
+65	263	6.6	0
+65	263	6.7	0
+65	263	6.8	0
+65	263	6.9	0
+65	263	7	0
+vector 66 TransportPathVisualizerSimpleWirelessShowcase.source.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+65	274	7.010127334256	78994.134070971
+66	274	0.1	0
+66	274	0.2	0
+66	274	0.3	0
+66	274	0.4	0
+66	274	0.5	0
+66	274	0.6	0
+66	274	0.7	0
+66	274	0.8	0
+66	274	0.9	0
+66	274	1	0
+66	274	1.1	0
+66	274	1.2	0
+66	274	1.3	0
+66	274	1.4	0
+66	274	1.5	0
+66	274	1.6	0
+66	274	1.7	0
+66	274	1.8	0
+66	274	1.9	0
+66	274	2	0
+66	274	2.1	0
+66	274	2.2	0
+66	274	2.3	0
+66	274	2.4	0
+66	274	2.5	0
+66	274	2.6	0
+66	274	2.7	0
+66	274	2.8	0
+66	274	2.9	0
+66	274	3	0
+66	274	3.1	0
+66	274	3.2	0
+66	274	3.3	0
+66	274	3.4	0
+66	274	3.5	0
+66	274	3.6	0
+66	274	3.7	0
+66	274	3.8	0
+66	274	3.9	0
+66	274	4	0
+66	274	4.1	0
+66	274	4.2	0
+66	274	4.3	0
+66	274	4.4	0
+66	274	4.5	0
+66	274	4.6	0
+66	274	4.7	0
+66	274	4.8	0
+66	274	4.9	0
+66	274	5	0
+66	274	5.1	0
+66	274	5.2	0
+66	274	5.3	0
+66	274	5.4	0
+66	274	5.5	0
+66	274	5.6	0
+66	274	5.7	0
+66	274	5.8	0
+66	274	5.9	0
+66	274	6	0
+66	274	6.1	0
+66	274	6.2	0
+66	274	6.3	0
+66	274	6.4	0
+66	274	6.5	0
+66	274	6.6	0
+66	274	6.7	0
+66	274	6.8	0
+66	274	6.9	0
+66	274	7	0
+66	274	7.010127334256	0
+

@@ -1,0 +1,25 @@
+version 2
+run General-0-20230128-17:05:12-10764
+attr configname General
+attr datetime 20230128-17:05:12
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Tictoc
+attr processid 10764
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.tic.sendInitialMessage true
+
+vector 0 Tictoc.toc data ETV
+attr interpolationmode linear
+attr type double
+0	2	0	54
+0	4	0	59
+0	6	0	71
+
